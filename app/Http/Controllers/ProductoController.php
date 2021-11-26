@@ -16,6 +16,7 @@ class ProductoController extends Controller
     public function index()
     {
         //
+        return response()->json(Producto::all());
     }
 
     /**
@@ -48,6 +49,8 @@ class ProductoController extends Controller
     public function show(Producto $producto)
     {
         //
+        return response()->json($producto);
+
     }
 
     /**

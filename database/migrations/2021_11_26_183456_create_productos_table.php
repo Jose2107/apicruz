@@ -15,7 +15,14 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('producto',45);
+            $table->unsignedInteger('existencias');
+            $table->decimal('precio_unitario',10,2);
+            $table->string('fotografia',45);
+            $table->tinyText('descripcion');
+            $table->enum('estado',['activo','inactivo']);
+            $table->decimal('tasa_iva',10,2);
+
         });
     }
 

@@ -42,6 +42,8 @@ class ProductoPolicy
     public function create(User $user)
     {
         //
+        return true;
+
     }
 
     /**
@@ -54,6 +56,7 @@ class ProductoPolicy
     public function update(User $user, Producto $producto)
     {
         //
+        return true;
     }
 
     /**

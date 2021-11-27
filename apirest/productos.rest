@@ -1,0 +1,44 @@
+### Listado de productos
+GET http://127.0.0.1:8000/api/productos HTTP/1.1
+Content-type: application/json
+Accept: application/json
+
+###informacion de producto
+GET http://127.0.0.1:8000/api/productos/1 HTTP/1.1
+Content-type: application/json
+Accept: application/json
+
+###crear producto
+POST  http://127.0.0.1:8000/api/productos HTTP/1.1
+Content-type: application/json
+Accept: application/json
+
+{
+    "producto":"Nuevo"
+    ,"existencias":10
+    ,"precio_unitario":34
+    ,"fotografia":"nuevo.jpg"
+    ,"descripcion":"Producto nuevo"
+    ,"estado":"activo"
+    ,"tasa_iva":16
+}
+
+###editar producto
+PATCH  http://127.0.0.1:8000/api/productos/3 HTTP/1.1
+Content-type: application/json
+Accept: application/json
+
+{
+    "producto":"Editar Nuevo"
+    ,"existencias":13
+    ,"precio_unitario":29
+    ,"fotografia":"editarnuevo.jpg"
+    ,"descripcion":"Producto editado"
+    ,"estado":"inactivo"
+    ,"tasa_iva":16
+}
+
+###borrar producto
+DELETE  http://127.0.0.1:8000/api/productos/1 HTTP/1.1
+Content-type: application/json
+Accept: application/json

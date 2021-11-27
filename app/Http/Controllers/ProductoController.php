@@ -26,7 +26,7 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        // 
     }
 
     /**
@@ -38,6 +38,9 @@ class ProductoController extends Controller
     public function store(StoreProductoRequest $request)
     {
         //
+        $request->validate(Producto::reglas());
+        Producto::create($request->all());
+        return response()->json(['estatus'=>true]);
     }
 
     /**
@@ -74,6 +77,9 @@ class ProductoController extends Controller
     public function update(UpdateProductoRequest $request, Producto $producto)
     {
         //
+        $request->validate(Producto::reglas());
+        $producto->update($request->all());
+        return response()->json(['estatus'=>true]);
     }
 
     /**
@@ -85,5 +91,8 @@ class ProductoController extends Controller
     public function destroy(Producto $producto)
     {
         //
+        $producto->delete();
+        return response()->json(['estatus'=>true]);
+
     }
 }
